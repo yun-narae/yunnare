@@ -1,0 +1,644 @@
+main .search_content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: #232323;
+  color: #121212;
+  padding: 16px;
+  overscroll-behavior: contain;
+  align-items: start;
+  display: none;
+}
+
+main .search_close {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 0 20px auto;
+}
+
+main .search_content>:nth-child(1) {
+  width: 100%;
+}
+
+main .search_content img {
+  width: 30px;
+  display: flex;
+  justify-content: right;
+  align-items: start;
+}
+
+main .search_content img:hover {
+  opacity: 50%;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+main .search_content input {
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: 0px;
+  width: 100%;
+  margin-right: 10px;
+}
+main .search_content input[placeholder] {
+  font-size: 0.8rem;
+}
+
+main .search_content .search_input {
+  margin-bottom: 20px;
+}
+
+main .search_content .searchButton {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+main .search_content .searchButton img {
+  width: 100%;
+}
+
+main .search_content .list {
+  cursor: default;
+  margin-bottom: 30px;
+}
+
+main .search_content .list ul {
+  gap: 8px;
+  text-align: left;
+}
+
+main .search_content .list li {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 6px 0;
+  
+}
+
+main .search_content .list .tt {
+  color: #C2C2C2;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+main .search_content .list01 {
+  align-items: start;
+}
+
+main .search_content .list01 .seawrapper {
+  /* max-width: 1200px;
+  height: 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between; */
+}
+
+.slick-track {
+  display: flex;
+  justify-content: space-between !important;
+}
+
+main .search_content .list01 .wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+main .search_content .list01 .wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0,0,0,0.02) 0%, #232323 100%);
+  z-index: 10;
+}
+
+main .search_content .list01 .wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(to left, rgba(0,0,0,0.02) 0%, #232323 100%);
+}
+
+main .search_content .list01 li {
+  padding: 6px 12px;
+  border-radius: 50px;
+  border: 1px solid #C2C2C2;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} main .search_content .list01 li:hover {
+  background: #3d3d3d;
+}
+
+main .search_content .list02 ul {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+
+main .search_content .list02 li {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  padding: 6px 12px;
+  border-radius: 50px;
+  border: 1px solid #757575;
+  background: #3d3d3d;
+}main .search_content .list02 li:hover {
+  background: #2c2c2c;
+  border: 1px solid #4d4d4d;
+}
+
+main .search_content .list03 .tt_sub {
+  font-size: 0.7rem;
+  color: #616161;
+  margin-bottom: 10px;
+}
+
+main .search_content .list03 ul {
+  align-items: center;
+}
+
+main .search_content .list03 li {
+  margin-bottom: 4px;
+}
+
+main .search_content .list03 .num {
+  font-size: 1rem;
+  font-weight: 600;
+  align-items: center;
+  vertical-align: -1px;
+  margin-right: 4px;
+}
+
+#nav_content {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  background-color: #fff;
+  color: #121212;
+  padding: 16px;
+  align-items: start; /* align-items: start; 안넣으면 아래 요소들에 bottom 패딩이나 마진 주었을 경우 위로 올라가는 오류.
+  */
+  /* 아래 코드는 네이버 참고한건데 각각의 역할 공부필요 */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: none;
+}
+
+#nav_content::-webkit-scrollbar { 
+  display: none;
+}
+
+#nav_content>:nth-child(1) {
+  width: 100%;
+  background-color: #fff;
+  align-items: start;
+}
+
+#nav_content .nav_close {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin: 0 0 20px auto;
+}
+
+#nav_content .nav_close img {
+  width: 30px;
+  height: 30px;
+}
+
+#nav_content .nav_close:hover {
+  opacity: 50%;
+}
+
+#nav_content .banneswiper {
+  display: none;
+}
+
+#nav_content>:nth-child(1) .profile {
+  background-color: #232323;
+  padding: 12px;
+  border-radius: 12px;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+#nav_content>:nth-child(1) .profile>:nth-child(1) {
+  min-width: 80px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+#nav_content>:nth-child(1) .profile>:nth-child(2) {
+  width: 100%;
+  margin-left: 12px;
+}
+
+#nav_content>:nth-child(1) .profile>:nth-child(2)>:nth-child(1) p {
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #fff;
+}
+
+#nav_content>:nth-child(1) .profile>:nth-child(2)>:nth-child(1) {
+  margin-bottom: 10px;
+}
+
+#nav_content>:nth-child(1) .profile>:nth-child(2)>:nth-child(2) div {
+  width: 50%;
+}
+
+#nav_content>:nth-child(1) .profile>:nth-child(2)>:nth-child(2) div:nth-child(1) {
+  padding-right: 20px;
+  border-right: 1px solid #434343;
+}
+
+#nav_content>:nth-child(1) .profile>:nth-child(2)>:nth-child(2) div:nth-child(2) {
+  margin-left: 20px;
+}
+
+#nav_content>:nth-child(1) .profile>:nth-child(2)>:nth-child(2) div b {
+  display: block;
+  margin-bottom: 10px;
+  color: #BDBDBD;
+}
+
+#nav_content>:nth-child(1) .profile>:nth-child(2)>:nth-child(2) div h4 {
+  cursor: default;
+  display: block;
+  text-align: right;
+}
+
+#nav_content>:nth-child(1) .profile>:nth-child(2)>:nth-child(2) div h4:hover {
+  text-decoration: underline;
+}
+
+#nav_content .mtitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 30px 0px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  border-bottom: 1px solid #dadbdc;
+  text-transform: uppercase;
+  z-index: 10; /* z-index가 없으면 터치가 잘안됨 ::before때문인듯 */
+} #nav_content .mtitle:hover {
+  border-bottom: 1px solid #121212;
+}
+
+#nav_content .nav_sub {
+  margin-bottom: 40px;
+}
+
+#nav_content .nav_sub .cs label::after {
+  content: '';
+  position: absolute;
+  top: 64%;
+  right: 10px;
+  transform: translate(0,-50%);
+  width: 20px;
+  height: 20px;
+  background: url("imge/icon/chevron-down_b.png")no-repeat;
+  background-size: 14px;
+  transition: all 0.3s ease-in;
+}
+
+#nav_content .nav_sub section ul {
+  max-height: 0px;
+  opacity: 0;
+  padding: 0px;
+}
+
+#nav_content .nav_sub section ul li {
+  padding: 10px 0px;
+  border-bottom: 1px solid #dcdcdc;
+  cursor: pointer;
+} #nav_content .nav_sub section ul li:hover {
+  border-bottom: 1px solid #ababab;
+}
+
+#nav_content .nav_sub section ul li:hover a {
+  color: #121212;
+}
+
+#nav_content .nav_sub section ul li a {
+  font-weight: 600;
+  color: #757575;
+}
+
+#nav_content .nav_sub li {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #757575;
+  text-transform: uppercase;
+}
+
+
+/* +ul 하기 전에 + label도 해줘야해!! */
+#nav_content .nav_sub section input[type="checkbox"]:checked + label::after {
+  transform: rotate(180deg);
+  top: 29%;
+}
+
+#nav_content .nav_sub section input[type="checkbox"]:checked + label + ul {
+  max-height: none;
+  opacity: 1;
+  transition: all 0.3s ease-out;
+  padding-top: 20px;
+  border-top: 1px solid #232323;
+}
+
+#nav_content .nav_sub .nav_sub02Body input[type="checkbox"]:checked + label + ul {
+  max-height: none;
+  opacity: 1;
+  transition: all 0.3s ease-out;
+  padding-top: 20px;
+  border-top: 1px solid #ccc;
+}
+
+#nav_content .nav_sub li:hover {
+  color: #121212;
+}
+
+#nav_content .nav_sub section:nth-child(1) ul {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+#nav_content .nav_sub section:nth-child(1) ul img {
+  margin-bottom: 10px;
+}
+
+#nav_content .inner>:nth-child(3) {
+  margin-bottom: 30px;
+  background-color: #F5F5F5;
+  border-radius: 14px;
+}
+
+#nav_content .inner>:nth-child(3) li {
+  width: 50%;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #616161;
+  z-index: 1;
+  cursor: default;
+  position: relative;
+}
+
+#nav_content .inner>:nth-child(3) li:hover {
+  color: #121212;
+}
+
+#nav_content .inner>:nth-child(3) li:hover::before {
+  opacity: 100%;
+  transition: all 0.3s ease-out;
+}
+
+#nav_content .inner>:nth-child(3) li::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 27%;
+  right: 10px;
+  transform: translate(0%, -40%);
+  background: url("imge/icon/chevron-down_b.png")no-repeat;
+  background-size: 14px;
+  transition: all 0.3s ease-in;
+  transform: rotate(-90deg);
+  opacity: 0%;
+}
+
+#nav_content .inner>:nth-child(3) li:nth-child(6)::before {
+  display: none;
+}
+
+#nav_content .inner .navconbtn {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  gap: 8px;
+  /* 안먹히다가 #nav_content .inner에서 height: 100%; 빼니까 됨 */
+}
+#nav_content .inner .navconbtn button {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1366px) {
+  main .search_content {
+    padding: 30px;
+    height: fit-content;
+  }
+
+  main .search_content>:nth-child(1) {
+    width: 1200px;
+    margin: 0 auto auto auto;
+    align-items: start;
+  }
+
+  main .search_content .search_input {
+    width: 600px;
+    margin: 0 auto 40px auto;
+  }
+
+  main .search_content input[placeholder] {
+    font-size: 1rem;
+  }
+
+  main .search_content .searchButton {
+    width: 60px;
+    height: 60px;
+    margin-left: 20px;
+  }
+
+  main .search_content input {
+    padding: 18px 30px;
+  }
+
+  main .search_content>:nth-child(1)>:nth-child(2){
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  main .search_content .list {
+    margin-bottom: 60px;
+  }
+
+  main .search_content .list ul {
+    gap: 12px;
+  }
+
+  main .search_content .list li {
+    font-size: 1.2rem;
+    font-weight: 1.4rem;
+    padding: 10px 16px;
+  }
+
+  main .search_content .list .tt {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  main .search_content .list03 li {
+    padding: 16px 0px;
+  }
+
+  main .search_content .list03 .tt {
+    margin-right: 20px;
+  }
+
+  main .search_content .list03 .tt_sub {
+    font-size: 1rem;
+  }
+
+  main .search_content .list03 .num {
+    font-size: 1.5rem;
+    margin-right: 20px;
+  }
+
+  #nav_content {
+    padding: 0px;
+  }
+  
+  #nav_content .nav_close {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 10;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+  #nav_content .nav_close img {
+    margin: 0 0 0 auto;
+    display: flex;
+    justify-content: right;
+  }
+
+  #nav_content .banneswiper {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  #nav_content .inner {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  #nav_content .inner>:nth-child(2) {
+    max-width: 640px;
+  }
+
+  #nav_content .bannerslide {
+    width: 100%;
+    height: 100vh;
+  } 
+
+  #nav_content .bannerslide img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  } 
+
+  #nav_content .profile {
+    display: none;
+  }
+
+  #nav_content .nav_sub section {
+    margin: 0;
+  }
+
+  #nav_content .mtitle {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-bottom: 0;
+    padding: 50px 0;
+  }
+
+  #nav_content .mtitle::after {
+    display: none;
+  }
+
+  #nav_content .nav_sub section input[type="checkbox"]:checked + label + ul {
+    padding: 0;
+    border: none;
+  }
+  
+  #nav_content .nav_sub section .nav_sub02Body label {
+    color: #616161;
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  #nav_content .nav_sub section ul {
+    display: flex;
+    opacity: 1;
+    max-height: fit-content;
+    flex-wrap: wrap;
+  }
+
+  #nav_content .nav_sub section ul li {      
+    padding: 20px 40px 0 0;
+    border-bottom: 0px;
+    border: 0px;
+  }
+
+  #nav_content .nav_sub section ul li {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  
+#nav_content .nav_sub section ul li {
+  padding: 20px 0px;
+  border-bottom: 0px;
+  margin-right: 20px;
+}   #nav_content .nav_sub section ul li:hover {
+  border-bottom: 0px;
+}
+
+  #nav_content .inner .navconbtn {
+    display: none;
+  }
+}

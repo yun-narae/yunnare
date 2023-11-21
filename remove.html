@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove</title>
+    <style type="text/css"></style>
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="header_content.css">
+    <link rel="stylesheet" href="membership.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="membership.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+</head>
+
+
+<body>
+    <script>
+        AOS.init();
+    </script>
+    <main>
+        <!-- header part -->
+        <div w3-include-html="header.html"></div>
+        <div w3-include-html="header_content.html"></div>
+    </main>
+    
+    <div class="wrap">
+        <div class="membership">
+
+            <div class="removebody">
+                <div class="removewrapper">
+
+                    <div class="removestart">
+                        <div class="t-form">
+                            <p class="t-main">회원정보 확인</p>
+                        </div>
+                        <div class="title">
+                            비밀번호 입력 후 회원탈퇴를 진행할 수 있습니다.
+                        </div>
+                        <div class="inn_linebox restartinn">
+                            <div>
+                                <label class="flex-between">
+                                    <input type="password" placeholder="비밀번호를 입력해주세요.">
+                                </label>
+                            </div>
+                            <div class="btnbody">
+                                <button class="btn1" onclick="window.location.href='index.html'">메인화면</button>
+                                <button class="btn2">확인</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="removecheck">
+                        <div class="t-form">
+                            <p class="t-main">회원탈퇴</p>
+                        </div>
+                        <div class="title">
+                            회원탈퇴 전 아래 사항을 반드시 읽어주세요.
+                        </div>
+                        <div class="recheckinn">
+                            <ul class="inn_linebox">
+                                <li class="tt">1. 기아 통합계정 탈퇴시 기아 통합계정 (온라인 회원), KIA Digital Key, UVO, 홈투카 서비스 등 통합계정(이메일ID)으로 가입한 서비스로부터 즉시 탈퇴됩니다.</li>
+                                <li class="tt">2. 탈퇴 후 재가입하시더라도 탈퇴 전의 사이트 이용내용은 원상복구되지 않습니다.</li>
+                                <li class="tt">3. 탈퇴 시 작성하신 차계부 데이터가 모두 삭제되오니, 탈퇴 전 차계부 데이터를 다운로드 받아주세요 (차계부 다운로드는 멤버스 PC사이트에서 가능합니다.)</li>
+                            </ul>
+                        </div>
+                        <div class="keep_wrap">
+                            <div class="label_box">
+                                <input type="checkbox" id="remove">
+                                <label for="remove">
+                                    <p class="name">회원탈퇴 안내를 모두 확인하였으며 탈퇴에 동의합니다.</p>
+                                </label>
+                            </div>
+                        </div>
+                        <button class="btn2">확인</button>
+                    </div>
+
+                    <div class="removesurvey">
+                        <div class="t-form">
+                            <p class="t-main">회원탈퇴 신청</p>
+                        </div>
+                        <div class="text_box flex-between">
+                            <p class="title">탈퇴사유</p>
+                            <p class="desc">*중복선택 가능합니다.</p>
+                        </div>
+                        <div class="resurveyinn inn_linebox inn">
+                            <div class="label_box">
+                                <input type="checkbox" id="survey1">
+                                <label for="survey1">
+                                    <p class="desc">탈퇴 후 재가입을 위해서</p>
+                                </label>
+                            </div>
+                            <div class="label_box">
+                                <input type="checkbox" id="survey2">
+                                <label for="survey2">
+                                    <p class="desc">자주 이용하지 않아서</p>
+                                </label>
+                            </div>
+                            <div class="label_box">
+                                <input type="checkbox" id="survey3">
+                                <label for="survey3">
+                                    <p class="desc">서비스 및 고객지원이 만족스럽지 않아서</p>
+                                </label>
+                            </div>
+                            <div class="label_box">
+                                <textarea placeholder="이 외에 불편하신 사항을 알려주세요."></textarea>
+                            </div>
+
+                        </div>
+                        <button class="btn2">확인</button>
+                    </div>
+
+                    <div class="finishinn">
+                        <div class="title">
+                            <span>윤나래</span>님 그동안 이용해주셔서 감사합니다.
+                        </div>
+                        <div class="title2">
+                            <span>KIA 통합회원</span>
+                            <br>
+                            회원탈퇴가 완료되었습니다.
+                        </div>
+                        <div class="btnbody">
+                            <button class="btn1" onclick="window.location.href='index.html'">메인화면</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div w3-include-html="footer.html"></div>
+
+    
+</body>
+<script>
+    // Tab opConbody 
+const opContabBtns = document.querySelectorAll('.tab > div');
+const opContabConts = document.querySelectorAll('.con_wrapper > div');
+
+opContabBtns.forEach((btn, index) => {
+btn.addEventListener('click', () => {
+    opContabBtns.forEach(otherBtn => {
+    otherBtn.classList.remove('active');
+    });
+    opContabConts.forEach(othercont => {
+    othercont.classList.remove('active');
+    });
+    opContabBtns[index].classList.add('active');
+    opContabConts[index].classList.add('active');
+    });
+});
+
+// input selectAll
+function checkSelectAll() {
+let checkboxes = document.querySelectorAll('input[name="ofuse"]');
+let checked = document.querySelectorAll('input[name="ofuse"]:checked');
+let selectAll = document.querySelector('input[name="ofuseall"]');
+
+if (checkboxes.length === checked.length) {
+    selectAll.checked = true;
+} else {
+    selectAll.checked = false;
+}
+};
+function selectAll(selectAll) {
+let checkboxes = document.getElementsByName('ofuse');
+checkboxes.forEach((checkbox) => {
+    checkbox.checked = selectAll.checked
+})
+};
+
+// ofuse1
+    // open
+    let ofuse1btn = document.querySelector(".ofuse1btn");
+    ofuse1btn.addEventListener("click", function() {
+    document.querySelector(".ofuse1").style.display = "block";
+    });
+    // close
+    let ofuse1btn_close = document.querySelector(".hide1");
+    ofuse1btn_close.addEventListener("click", function() {
+    document.querySelector(".ofuse1").style.display = "none";
+    });
+// ofuse2
+    // open
+    let ofuse2btn = document.querySelector(".ofuse2btn");
+    ofuse2btn.addEventListener("click", function() {
+    document.querySelector(".ofuse2").style.display = "block";
+    });
+    // close
+    let ofuse2btn_close = document.querySelector(".hide2");
+    ofuse2btn_close.addEventListener("click", function() {
+    document.querySelector(".ofuse2").style.display = "none";
+    });
+</script>
+
+
+<script>
+    includeHTML();
+</script>
+  
+</html>

@@ -1,0 +1,152 @@
+header>ul {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main .navBar {
+  background-color: #fff;
+  box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.05);
+  padding: 10px 16px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  transform: translate(0%,0%);
+  z-index: 100;
+  width: 100%;
+}
+
+#navBar .hea_top .txt_bar {
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  margin: 0 10px;
+  background: #232323;
+  vertical-align: -1px;
+}
+
+#navBar .hea_top li a {
+  font-weight: 600;
+  color: #232323;
+} #navBar .hea_top li a:hover {
+  text-decoration: underline;
+}
+
+#navBar .navlogo {
+  width: 70px;
+}
+
+#navBar .pc-nav ul li {    
+  text-transform: uppercase;
+  position: relative;
+} #navBar .pc-nav ul li:hover a {
+
+}
+#navBar .pc-nav>ul>li::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 3px;
+  background-color: #121212;
+  transform: translate(-25%, 50%) scaleX(0);
+} #navBar .pc-nav ul li:hover::before {
+  transform: translate(0, 50%) scaleX(1);
+  transition: 0.4s;
+}
+
+#navBar .pc-nav ul li a {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 20px;
+}
+
+#navBar .pc-nav ul .cs {
+  position: relative;
+}
+
+#navBar .pc-nav ul .cs:hover .cs_sub{
+  display: block;
+}
+
+#navBar .pc-nav ul .cs_sub {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  transform: translate(0,0);
+  width: 100%;
+  display: block;
+  z-index: -1;
+  background: #fff;
+  padding-top: 0px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+  display: none;
+}
+
+#navBar .pc-nav ul .cs_sub a {
+  font-weight: 400;
+} #navBar .pc-nav ul .cs_sub a:hover {
+  color: #BDBDBD;
+}
+
+#navBar ul .navright img {
+  width: 70px;
+}
+
+#navBar ul .navright img {
+  width: 40px;
+  position: relative;
+}
+
+#navBar ul .navright img:hover {
+  border-radius: 50px;
+  background-color: #F5F5F5;
+}
+
+#navBar ul .navright>:nth-child(1) {
+  margin-right: 8px;
+}
+@media screen and (min-width: 1366px) {
+  #navBar {
+    padding: 20px 0;
+    background: none;
+    box-shadow: none;
+  }
+  /* pc Add scroLL event js style */
+  #navBar.active {
+    background-color: #fff;
+    box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.05);
+    padding: 24px 0;
+  }
+
+  #navBar .hea_top {
+    display: flex;
+    justify-content: right;
+  }
+
+  #navBar .hea_top.active {
+    display: none;
+  }
+
+  #navBar .navlogo {
+    width: 100px;
+  }
+
+  #navBar .pc-nav ul {
+    display: flex;
+  }
+
+  #navBar .pc-nav ul.active li {
+    padding: 0 5px;
+  }
+
+  #nav_content {
+    padding: 0;
+    position: relative;
+    height: 100vh;
+    position: fixed;
+  }
+}
+

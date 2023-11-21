@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style type="text/css"></style>
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="header_content.css">
+    <link rel="stylesheet" href="membership.css">
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="membership.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
+</head>
+
+
+<body>
+    <script>
+        AOS.init();
+    </script>
+    <main>
+        <!-- header part -->
+        <div w3-include-html="header.html"></div>
+        <div w3-include-html="header_content.html"></div>
+    </main>
+    
+    <div class="wrap">
+        <div class="membership">
+
+            <div class="loginbody">
+                <div class="t-form">
+                    <p class="t-main">로그인</p>
+                    <p class="t-more"></p>
+                </div>
+                <div class="loginwrapper">
+                    <div class="tab">
+                        <div class="active">로그인</div>
+                        <div>비회원 로그인</div>
+                    </div>
+
+                    <div class="con_body">
+                        <div class="con_wrapper swiper-wrapper">
+
+                            <div class="members swiper-slide active">
+                                <div class="id_pw_wrap">
+                                    <input type="text" placeholder="아이디">
+                                    <input type="password" placeholder="비밀번호">
+                                </div>
+                                <div class="keep_wrap">
+                                    <div class="label_box">
+                                        <input type="checkbox" id="idde">
+                                        <label for="idde">
+                                            <p class="name">로그인 상태 유지</p>
+                                        </label>
+                                    </div>
+                                    <div class="label_box">
+                                        <input type="checkbox" id="idsave">
+                                        <label for="idsave">
+                                            <p class="name">아이디 저장</p>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="login_wrap">
+                                    <button class="btn2">로그인</button>
+                                    <button class="btn1">회원가입</button>
+                                </div>
+                                <div class="find_wrap">
+                                    <button class="btn3">아이디 찾기</button>
+                                    <span class="txt_bar"></span>
+                                    <button class="btn3">비밀번호 찾기</button>
+                                </div>
+                                <div class="other_lo_list">
+                                    <div class="other_lo">
+                                        <div class="img_box">
+                                            <img src="imge/icon/btn_login_go.png" alt="btn_login_go">
+                                        </div>
+                                    </div>
+                                    <div class="other_lo">
+                                        <div class="img_box">
+                                            <img src="imge/icon/btn_login_ka.png" alt="btn_login_ka">
+                                        </div>
+                                    </div>
+                                    <div class="other_lo">
+                                        <div class="img_box">
+                                            <img src="imge/icon/btn_login_na.png" alt="btn_login_na">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="non_member swiper-slide">
+                                <div class="id_pw_wrap">
+                                    <input type="text" placeholder="이메일">
+                                    <input type="password" placeholder="주문번호">
+                                </div>
+                                <div class="login_wrap">
+                                    <a href="#!"><button class="btn2">주문조회</button></a>
+                                </div>
+                                <div>
+                                    <p class="desc">• 비회원께서는 주문 시 주문번호와 비밀번호(주문 시 배송 조회 비밀번호로 입력)를 입력하시면, 해당 주문 상품의 배송 상태를 조회하실 수 있습니다.
+                                    </p>
+                                </div>
+                                <div class="joinus">
+                                    <div>
+                                        <p class="desc bold">아직 기아 회원이 아니시라면 회원가입을 통해 더 많은 혜택을 받아보실 수 있습니다.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <a href="#!"><button class="btn1">회원가입</button></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div w3-include-html="footer.html"></div>
+
+    
+</body>
+<script>
+    // Tab opConbody 
+const opContabBtns = document.querySelectorAll('.tab > div');
+const opContabConts = document.querySelectorAll('.con_wrapper > div');
+
+opContabBtns.forEach((btn, index) => {
+btn.addEventListener('click', () => {
+    opContabBtns.forEach(otherBtn => {
+    otherBtn.classList.remove('active');
+    });
+    opContabConts.forEach(othercont => {
+    othercont.classList.remove('active');
+    });
+    opContabBtns[index].classList.add('active');
+    opContabConts[index].classList.add('active');
+    });
+});
+
+// input selectAll
+function checkSelectAll() {
+let checkboxes = document.querySelectorAll('input[name="ofuse"]');
+let checked = document.querySelectorAll('input[name="ofuse"]:checked');
+let selectAll = document.querySelector('input[name="ofuseall"]');
+
+if (checkboxes.length === checked.length) {
+    selectAll.checked = true;
+} else {
+    selectAll.checked = false;
+}
+};
+function selectAll(selectAll) {
+let checkboxes = document.getElementsByName('ofuse');
+checkboxes.forEach((checkbox) => {
+    checkbox.checked = selectAll.checked
+})
+};
+
+// ofuse1
+    // open
+    let ofuse1btn = document.querySelector(".ofuse1btn");
+    ofuse1btn.addEventListener("click", function() {
+    document.querySelector(".ofuse1").style.display = "block";
+    });
+    // close
+    let ofuse1btn_close = document.querySelector(".hide1");
+    ofuse1btn_close.addEventListener("click", function() {
+    document.querySelector(".ofuse1").style.display = "none";
+    });
+// ofuse2
+    // open
+    let ofuse2btn = document.querySelector(".ofuse2btn");
+    ofuse2btn.addEventListener("click", function() {
+    document.querySelector(".ofuse2").style.display = "block";
+    });
+    // close
+    let ofuse2btn_close = document.querySelector(".hide2");
+    ofuse2btn_close.addEventListener("click", function() {
+    document.querySelector(".ofuse2").style.display = "none";
+    });
+</script>
+
+
+<script>
+    includeHTML();
+</script>
+  
+</html>

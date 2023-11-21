@@ -1,0 +1,891 @@
+@charset "utf-8";
+@import url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    word-break: keep-all;
+    outline: 0px solid silver;
+    transition: 0.5s;
+    align-items: center;
+    scroll-behavior: smooth;
+  }
+
+body {
+  font-family: 'SUIT', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  color: black;
+  letter-spacing: 0.1px;
+  background-color: #fff;
+  color: #131313;
+}
+
+h1 {
+  font-size: 2.4rem;
+  line-height: 2.9rem;
+  font-weight: 900;
+  }
+
+h2 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.8rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1.1rem;
+  line-height: 1.3rem;
+  font-weight: 450;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 300;
+  color: #131313;
+}
+
+p {
+  text-decoration: none;
+  font-weight: 400;
+}
+
+ul, li {  
+  list-style: none;
+  text-decoration: none;  
+  }
+  
+button {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 10px 30px;
+  transition: 0.3s;
+  border-radius: 100px;
+  border: 0px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn1 {
+  color: #121212;
+  background: #fff;
+  border: 1px solid #232323;
+  cursor: default;
+  width: 100%;
+
+} .btn1:hover {
+  background: #F5F5F5;
+  border: 1px solid #C2C2C2;
+  color: #757575;
+}
+
+.btn2 {
+  width: 100%;
+  color: #fff;
+  background: #131313;
+  cursor: default;
+} .btn2:hover {
+  background: #616161;
+}
+
+.btn3 {
+  color: #919191;
+  background: none;
+  border-radius: 0px;
+  padding: 0px;
+  cursor: default;
+} .btn3:hover {
+  color: #616161;
+}
+
+.txt_bar {
+  width: 1px;
+  height: 10px;
+  background: #919191;
+  margin: 0 10px;
+}
+
+img {
+  width: 100px;
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+.mo-dont {
+  display: none;
+}
+
+.pc-dont {
+  display: block;
+}
+
+.dis-block {
+  display: block;
+}
+
+.dis-none {
+  display: none;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-left {
+  text-align: left;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.t-upper {
+  text-transform: uppercase;
+}
+
+.t-lower {
+  text-transform: lowercase;
+}
+
+.t-inherit {
+  text-transform: inherit;
+}
+
+.t-initial {
+  text-transform: initial;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-left {
+  display: flex;
+  justify-content: left;
+}
+
+.flex-right {
+  display: flex;
+  justify-content: right;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img_hover {
+  overflow: hidden;
+}
+
+.img_hover:hover>img {
+  scale: 1.1;
+  object-fit: cover;
+}
+
+.cursor-p {
+  cursor: pointer;
+}
+
+/*  */
+
+.pc-none {
+  display: block;
+}
+
+.mo-none {
+  display: none;
+}
+
+.t-form {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.t-main {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 700;
+}
+
+.t-more {
+  cursor: default;
+}
+
+.t-more:hover {
+  margin: 0 0 0 auto;
+  transform: scaleX(1.1);
+}
+
+.t-sub {
+  margin-top: 12px;
+  color: #757575;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #616161;
+  margin-bottom: 12px;
+} 
+.desc .bold {
+  font-weight: 700;
+  color: #121212;
+}
+
+input[type="radio"] {
+  /* display: none; */
+}
+
+input[type="checkbox"] {
+  /* display: none; */
+}
+
+input {
+  width: 100%;
+  border-radius: 50px;
+  border: 1px solid #dadbdc;
+  padding: 10px 16px;
+}
+
+input::placeholder {
+  font-size: 0.7rem;
+}
+
+input:hover {
+  border: 1px solid #121212;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.iconA {
+  /* 아이콘 관련 CSS a 태그에 class: iconA */
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.iconA i {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+/* start */
+
+.membership {
+  padding-top: 60px;
+  max-width: 640px;
+  margin: 0 auto 120px auto;
+}
+
+.loginbody, .joininn, .ofusebody, .finishinn, .removestart, .removecheck, .removesurvey {
+  padding: 60px 16px;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.inn {
+  margin-bottom: 20px;
+}
+
+.inn:last-child {
+  margin-bottom: 0px;
+}
+
+.inn .name {
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #232323;
+}
+
+.inn div {
+  display: grid;
+  grid-template-columns: auto 100px;
+  gap: 8px;
+}
+
+.inn .name span {
+  color: rgb(226, 100, 68);
+  margin-left: 4px;
+}
+
+.tab {
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+  gap: 6px;
+  background: #f8f8f8;
+  background: #f8f8f8;
+  border: 1px solid #dadbdc;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+.tab > div {
+  width: 50%;
+  text-align: center;
+  padding: 10px 16px;
+  color: #919191;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+} .tab > div:hover {
+  background-color: #e6e6e6;
+}
+
+.tab > div.active {
+  background-color: #121212;
+  color: #fff;
+}
+
+.tit {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #232323;
+}
+
+.tit.bold {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.ofmore {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #757575;
+  cursor: pointer;
+} .ofmore:hover {
+  text-decoration: underline;
+}
+
+.loginbody .con_wrapper > div {
+  display: none;
+}
+
+.loginbody .con_wrapper > div.active {
+  display: block;
+}
+
+.loginbody .swiper-slide {
+  border-radius: 14px;
+  background: #f8f8f8;
+  border: 1px solid #dadbdc;
+  padding: 20px 16px;
+}
+
+.loginbody .id_pw_wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.inn_linebox {
+  border-radius: 14px;
+  background: #f8f8f8;
+  border: 1px solid #dadbdc;
+  padding: 20px;
+}
+
+.keep_wrap {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.label_box input[type="checkbox"] {
+  display: none;
+}
+
+.label_box {
+  display: flex;
+  padding: 10px 0px 10px 0px;
+  /* border-bottom: 1px solid #dadbdc; */
+}
+
+.label_box label {
+  position: relative;
+  background: url("imge/icon/check_off.png")no-repeat;
+  background-size: 20px;
+  background-position: left;
+  padding-left: 24px;
+  cursor: pointer;
+  height: 20px;
+  display: flex;
+} 
+
+.label_box label .name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #616161;
+} .label_box label .name:hover {
+  color: #121212;
+}
+
+.label_box input:checked + label .name {
+  color: #121212;
+}
+
+.label_box input:checked + label::after {
+  content: '';
+  position: absolute;
+  background: url("imge/icon/check_on.png")no-repeat;
+  top: 50%;
+  left: 0%;
+  transform: translate(0%, -50%);
+  background-size: cover;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+}
+
+.loginbody .login_wrap {
+  margin-bottom: 12px;
+}
+
+.members .login_wrap button:nth-child(1) {
+  margin-bottom: 8px;
+}
+
+.loginbody .find_wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.loginbody .other_lo_list {
+  display: flex;
+  justify-content: center;
+}
+
+.loginbody .other_lo_list .other_lo {
+  padding: 8px 12px;
+}
+
+.loginbody .other_lo_list .img_box {
+  width: 40px;
+} .loginbody .other_lo_list .img_box:hover {
+  opacity: 0.5;
+}
+
+.loginbody .non_member .joinus {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+}
+
+.loginbody .non_member .joinus .desc, .non_member .joinus button {
+  margin-bottom: 0;
+}
+
+.ofusebody .ofusecon2 {
+  margin-bottom: 20px;
+}
+
+.ofusebody .ofuse {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
+}
+
+.ofusebody .tt {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.ofusebody .ofuse .ofuseinn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  width: 328px;
+  padding: 30px 24px;
+  border-radius: 12px;
+}
+
+.ofusebody .ofuse .ofuseinn ul {
+  height: 500px;
+  overflow-y: scroll;
+}
+
+.ofusebody .ofuse .ofuseinn ul::-webkit-scrollbar {
+  display: none;
+}
+
+.ofusebody .ofuse .ofuseinn li {
+  margin-bottom: 10px;
+  line-height: 1.2rem;
+}
+
+.ofusebody .ofuse .ofuseinn .blod {
+  line-height: 1.4rem;
+  font-weight: 700;
+  color: #121212;
+  display: block;
+}
+
+.ofusebody .ofuse .ofuseinn .hide {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: right;
+  cursor: pointer;
+}
+
+.joinwrapper > div:last-child {
+  margin-bottom: 0px;
+}
+
+.joinbody .joininn {
+  border-bottom: 8px solid #F5F5F5;
+  padding-bottom: 40px;
+}
+
+.membership .title {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4rem;
+  margin-bottom: 24px;
+  padding: 14px 0px;
+}
+
+.joininn .title, .ofusebody .title {
+  border-bottom: 1px solid #757575;
+}
+
+.joinbody .label_box {
+  justify-content: space-between;
+}
+
+.joinbody .label_box.non {
+  display: block;
+}
+
+.joinbody .label_box > div:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.finishinn {
+  background: #f8f8f8;
+}
+
+.finishinn .img_box img {
+  width: 50px;
+  margin-top: 24px;
+}
+
+.finishinn .title {
+  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #616161;
+}
+
+.finishinn .title span {
+  font-weight: 900;
+  color: #232323;
+}
+
+.finishinn .title2 {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.finishinn .title2 span {
+  font-weight: 700;
+}
+
+.btnbody {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.btnbody button {
+  cursor: pointer;
+}
+
+.removestart .title, .removecheck .title {
+  text-align: center;
+}
+
+.restartinn div {
+  margin-bottom: 20px;
+}
+
+.restartinn .btnbody .btn2 {
+  cursor: default;
+}
+
+.recheckinn ul {
+  line-height: 1.2rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.recheckinn ul li {
+  margin-bottom: 10px;
+}
+
+.recheckinn ul li:last-child {
+  margin-bottom: 0px;
+}
+
+.resurveyinn .desc {
+  margin-bottom: 0px;
+}
+
+.resurveyinn textarea {
+  width: 100%;
+  border-radius: 13px;
+  border: 1px solid #dadbdc;
+  height: 140px;
+  padding: 14px;
+}
+
+.removesurvey .title, .removesurvey .desc {
+  margin-bottom: 0px;
+}
+
+
+@media screen and (min-width: 1366px) {
+  .pc-none {
+    display: none;
+  }
+
+  .mo-none {
+    display: block;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 16px 30px;
+  }
+
+  .t-main {
+    font-size: 1.6rem;
+    line-height: 2rem;
+    font-weight: 800;
+  }
+
+  .desc {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  input::placeholder {
+    font-size: 1rem;
+  }
+
+  input {
+    padding: 20px 30px;
+  }
+
+  .membership {
+    padding-top: 140px;
+  }
+
+  .loginbody, .joininn, .ofusebody, .finishinn {
+    padding: 60px 0px;
+  }
+
+  .inn {
+    display: grid;
+    grid-template-columns: 120px auto;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .inn .name {
+    font-size: 1rem;
+    line-height: 1.4rem;
+    width: 160px;
+  }
+
+  .inn div {
+    display: grid;
+    grid-template-columns: auto 160px;
+    gap: 8px;
+    width: 100%;
+    justify-content: inherit;
+  }
+
+  .tab {
+    margin-bottom: 34px;
+    padding: 6px;
+  }
+  
+  .tab > div {
+    font-size: 1.2rem;
+    padding: 20px 34px;
+  }
+
+  .label_box {
+    border: none;
+  }
+
+  .label_box label {
+    background-size: 30px;
+    padding-left: 34px;
+    height: 30px;
+  }
+
+  .label_box input:checked + label::after {
+    width: 30px;
+    height: 30px;
+  }
+
+  .label_box label .name {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  .membership .title {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+  }
+
+  .loginbody .con_wrapper .swiper-slide {
+    padding: 40px;
+  }
+
+  .loginbody .con_wrapper .id_pw_wrap {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .loginbody .con_wrapper .login_wrap button:nth-child(1) {
+    margin-bottom: 12px;
+  }
+  
+  .loginbody .con_wrapper .login_wrap {
+    margin-bottom: 20px;
+  }
+
+  .loginbody .con_wrapper .find_wrap {
+    margin-bottom: 40px;
+  }
+
+  .loginbody .con_wrapper .other_lo_list .img_box {
+    width: 60px;
+  }
+
+  .joinbody .label_box .tit {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  .joinbody .label_box .tit.bold {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  .joinbody .label_box .ofmore {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+  }
+
+  .ofusebody .ofuse {
+    display: block;
+    background: none;
+    position: unset;
+    margin-bottom: 30px;
+  }
+
+  .ofusebody .ofuse .ofuseinn {
+    position: unset;
+    transform: none;
+    border-radius: 14px;
+    background: #f8f8f8;
+    border: 1px solid #dadbdc;
+    width: 100%;
+  }
+
+  .ofusebody .ofuse .ofuseinn ul {
+    height: 240px;
+    overflow: scroll;
+  }
+
+  .finishinn {
+    background: none;
+  }
+  
+  .finishinn .title2 {
+    font-size: 2.6rem;
+    line-height: 3.6rem;
+    margin-bottom: 48px;
+  }
+  
+  .finishinn .title2 span {
+    font-weight: 700;
+  }
+  
+  .finishinn .btnbody {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .resurveyinn div {
+    display: flex;
+  }
+
+  .resurveyinn {
+    display: block;
+  }
+
+}
