@@ -558,7 +558,7 @@ input[type="checkbox"] {
 .trim_option input[type="radio"]:checked + label::after {
   content: '';
   position: absolute;
-  background: url("imge/icon/check_on.png")no-repeat;
+  background: url("image/icon/check_on.png")no-repeat;
   top: 50%;
   right: 10%;
   transform: translate(0%, -50%);

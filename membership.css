@@ -234,6 +234,7 @@ img {
   font-size: 1.2rem;
   line-height: 1.6rem;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .t-more {
@@ -448,7 +449,7 @@ input:hover {
 
 .label_box label {
   position: relative;
-  background: url("imge/icon/check_off.png")no-repeat;
+  background: url("image/icon/check_off.png")no-repeat;
   background-size: 20px;
   background-position: left;
   padding-left: 24px;
@@ -472,7 +473,7 @@ input:hover {
 .label_box input:checked + label::after {
   content: '';
   position: absolute;
-  background: url("imge/icon/check_on.png")no-repeat;
+  background: url("image/icon/check_on.png")no-repeat;
   top: 50%;
   left: 0%;
   transform: translate(0%, -50%);
@@ -484,6 +485,10 @@ input:hover {
 
 .loginbody .login_wrap {
   margin-bottom: 12px;
+}
+
+.members .login_wrap button {
+  cursor: pointer;
 }
 
 .members .login_wrap button:nth-child(1) {
@@ -516,6 +521,10 @@ input:hover {
   justify-content: space-between;
   gap: 8px;
   align-items: center;
+}
+
+.loginbody .non_member .joinus button {
+  cursor: pointer;
 }
 
 .loginbody .non_member .joinus .desc, .non_member .joinus button {
@@ -598,6 +607,8 @@ input:hover {
   line-height: 1.4rem;
   margin-bottom: 24px;
   padding: 14px 0px;
+  border-bottom: 1px solid #757575;
+
 }
 
 .joininn .title, .ofusebody .title {
@@ -659,10 +670,6 @@ input:hover {
   cursor: pointer;
 }
 
-.removestart .title, .removecheck .title {
-  text-align: center;
-}
-
 .restartinn div {
   margin-bottom: 20px;
 }
@@ -697,10 +704,9 @@ input:hover {
   padding: 14px;
 }
 
-.removesurvey .title, .removesurvey .desc {
-  margin-bottom: 0px;
+.finishinn .title {
+  border: 0px;
 }
-
 
 @media screen and (min-width: 1366px) {
   .pc-none {
@@ -717,8 +723,8 @@ input:hover {
   }
 
   .t-main {
-    font-size: 1.6rem;
-    line-height: 2rem;
+    font-size: 2rem;
+    line-height: 2.4rem;
     font-weight: 800;
   }
 

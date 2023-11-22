@@ -22,58 +22,59 @@ function includeHTML() {
             // fooer
           // dropdown
           const optionMenu = document.querySelector(".ffdropdown"),
-            selectBtn = optionMenu.querySelector(".select_btn"),
-            options = optionMenu.querySelectorAll(".foption"),
-            title = optionMenu.querySelector(".setitle");
-            selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
-            options.forEach(option => {
-            option.addEventListener("click", () => {
-                let selectedOption = option.querySelector(".option_text").innerText;
-                title.innerText = selectedOption;
-                optionMenu.classList.remove("active");
-            })
-        });
-
-        // option select 중복가능
-        const selectBoxElements = document.querySelectorAll(".select");
-  
-        function toggleSelectBox(selectBox) {
-            selectBox.classList.toggle("active");
-        }
-
-        function selectOption(optionElement) {
-            const selectBox = optionElement.closest(".select");
-            const selectedElement = selectBox.querySelector(".btn-tt");
-            selectedElement.textContent = optionElement.textContent;
-        }
-
-        selectBoxElements.forEach(selectBoxElement => {
-            selectBoxElement.addEventListener("click", function (e) {
-                const targetElement = e.target;
-                const isOptionElement = targetElement.classList.contains("option-tt");
-
-                if (isOptionElement) {
-                    selectOption(targetElement);
-                }
-
-                toggleSelectBox(selectBoxElement);
+                selectBtn = optionMenu.querySelector(".select_btn"),
+                options = optionMenu.querySelectorAll(".foption"),
+                title = optionMenu.querySelector(".setitle");
+                selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
+                options.forEach(option => {
+                option.addEventListener("click", () => {
+                    let selectedOption = option.querySelector(".option_text").innerText;
+                    title.innerText = selectedOption;
+                    optionMenu.classList.remove("active");
+                })
             });
-        });
 
-        document.addEventListener("click", function (e) {
-            const targetElement = e.target;
-            const isSelect = targetElement.classList.contains("select") || targetElement.closest(".select");
 
-            if (isSelect) {
-                return;
+            // option select 중복가능
+            const selectBoxElements = document.querySelectorAll(".select");
+    
+            function toggleSelectBox(selectBox) {
+                selectBox.classList.toggle("active");
             }
 
-            const allSelectBoxElements = document.querySelectorAll(".select");
+            function selectOption(optionElement) {
+                const selectBox = optionElement.closest(".select");
+                const selectedElement = selectBox.querySelector(".btn-tt");
+                selectedElement.textContent = optionElement.textContent;
+            }
 
-            allSelectBoxElements.forEach(boxElement => {
-                boxElement.classList.remove("active");
+            selectBoxElements.forEach(selectBoxElement => {
+                selectBoxElement.addEventListener("click", function (e) {
+                    const targetElement = e.target;
+                    const isOptionElement = targetElement.classList.contains("option-tt");
+
+                    if (isOptionElement) {
+                        selectOption(targetElement);
+                    }
+
+                    toggleSelectBox(selectBoxElement);
+                });
             });
-        }); 
+
+            document.addEventListener("click", function (e) {
+                const targetElement = e.target;
+                const isSelect = targetElement.classList.contains("select") || targetElement.closest(".select");
+
+                if (isSelect) {
+                    return;
+                }
+
+                const allSelectBoxElements = document.querySelectorAll(".select");
+
+                allSelectBoxElements.forEach(boxElement => {
+                    boxElement.classList.remove("active");
+                });
+            }); 
 
             // search
               // search_open
@@ -123,7 +124,53 @@ function includeHTML() {
                   }
               });
             };
-  
+
+            // // faq ques open
+            // // 위치 고정
+            // const faq_box = {
+            //     click: function(target) {
+            //     var $target = $(target);
+            //     $target.on('click', function() {
+        
+            //         if ($(this).hasClass('active')) {
+            //         slideUp($target);
+            //         } else {
+            //         slideUp($target);
+            //         $(this).addClass('active').next().slideDown();
+            //         }
+        
+            //         function slideUp($target) {
+            //         $target.removeClass('active').next().slideUp();
+            //         }
+        
+            //     });
+            //     }
+            // };
+            // faq_box.click('.faq_box > .ques');
+
+            // // qna ask open
+            // // 위치 고정
+            // const ask_box = {
+            //     click: function(target) {
+            //     var $target = $(target);
+            //     $target.on('click', function() {
+        
+            //         if ($(this).hasClass('active')) {
+            //         slideUp($target);
+            //         } else {
+            //         slideUp($target);
+            //         $(this).addClass('active').next().slideDown();
+            //         }
+        
+            //         function slideUp($target) {
+            //         $target.removeClass('active').next().slideUp();
+            //         }
+        
+            //     });
+            //     }
+            // };
+            // ask_box.click('.ask_box > .ques');
+
   
             // reveal
             function reveal() {
@@ -144,14 +191,7 @@ function includeHTML() {
             window.addEventListener("scroll", reveal);
             // To check the scroll position on page load
             reveal();
-  
-  
-            // seawrapper 최근 검색어 슬라이드
-            $('.seawrapper').slick({
-              infinite: true,
-              slidesToShow: 4.5,
-              // slidesToScroll: 1,
-            });
+
   
             // nav bannerwrapper swiper
             let menuconmainSwiper = new Swiper(".banneswiper", {
@@ -473,8 +513,9 @@ function includeHTML() {
               },
           });
 
-          // bestmore open
-            var acodian = {
+
+          // All more open
+            var moreopen = {
                 click: function(target) {
                 var $target = $(target);
                 $target.on('click', function() {
@@ -493,7 +534,8 @@ function includeHTML() {
                 });
                 }
             };
-            acodian.click('.bestmorebtn');
+            moreopen.click('.morebtn');
+
 
             // newKia swiper-slid 1366px에서는 작동X
             // event 스와이퍼가 먹히지 않아서 아래로 내렸더니 해결됐음
@@ -534,6 +576,10 @@ function includeHTML() {
             ww = $(window).width();
             initSwiper();
             });
+
+
+
+            
 
           
           }

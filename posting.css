@@ -245,6 +245,8 @@ img {
   font-size: 1.2rem;
   line-height: 1.6rem;
   font-weight: 700;
+  text-transform: uppercase;
+
 }
 
 .t-more {
@@ -308,7 +310,7 @@ input:hover {
 
 .label_box label {
   position: relative;
-  background: url("imge/icon/check_off.png")no-repeat;
+  background: url("image/icon/check_off.png")no-repeat;
   background-size: 20px;
   background-position: left;
   padding-left: 24px;
@@ -330,7 +332,7 @@ input:hover {
 .label_box input:checked + label::after {
   content: '';
   position: absolute;
-  background: url("imge/icon/check_on.png")no-repeat;
+  background: url("image/icon/check_on.png")no-repeat;
   top: 50%;
   left: 0%;
   transform: translate(0%, -50%);
@@ -449,7 +451,7 @@ label {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url("imge/icon/search_w.png")no-repeat;
+  background: url("image/icon/search_w.png")no-repeat;
   background-position: center;
   background-size: 25px;
   width: 30px;
@@ -518,7 +520,7 @@ label {
   margin-top: 20px;
 }
 
-.faq_box .ques {
+.morebtn .ques {
   color: #3d3d3d;
   font-size: 0.8rem;
   font-weight: 700;
@@ -533,7 +535,7 @@ label {
   position: relative;
 }
 
-.faq_box .ques::after {
+.morebtn .ques::after {
   content: '';
   position: absolute;
   top: 64%;
@@ -541,12 +543,12 @@ label {
   transform: translate(0,-50%);
   width: 20px;
   height: 20px;
-  background: url("imge/icon/chevron-down_b.png")no-repeat;
+  background: url("image/icon/chevron-down_b.png")no-repeat;
   background-size: 14px;
   transition: all 0.3s ease-in;
 }
 
-.faq_box .ques::before {
+.morebtn .ques::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -554,21 +556,21 @@ label {
   transform: translate(0,-50%);
   width: 30px;
   height: 30px;
-  background: url("imge/icon/faq_q.png")no-repeat center;
+  background: url("image/icon/faq_q.png")no-repeat center;
   background-size: 24px;
 }
 
-.faq_box .ques:hover,.faq_box .ques.active {
+.morebtn .ques:hover,.morebtn .ques.active {
   color: #121212;
   border-bottom: 1px solid #757575;
 }
 
-.faq_box .ques.active::after {
+.morebtn .ques.active::after {
   transform: rotate(180deg);
   top: 22%;
 }
 
-.faq_box .ans {
+.morebtn .ans {
   background: #F5F5F5;
   padding: 60px 12px 24px 12px;
   border-bottom: 1px solid #d8d8d8;
@@ -576,7 +578,7 @@ label {
   position: relative;
 }
 
-.faq_box .ans::after {
+.morebtn .ans::after {
   content: '';
   position: absolute;
   top: 14px;
@@ -584,16 +586,16 @@ label {
   transform: translate(0,0);
   width: 30px;
   height: 30px;
-  background: url("imge/icon/faq_a.png")no-repeat center;
+  background: url("image/icon/faq_a.png")no-repeat center;
   background-size: 24px;
 }
 
-.faq_box .ans .tt {
+.morebtn .ans .tt {
   font-size: 0.8rem;
   line-height: 1.2rem;
 }
 
-.faq_box .ans .ttlink {
+.morebtn .ans .ttlink {
   font-size: 0.8rem;
   line-height: 1.2rem;
   font-weight: 700;
@@ -601,12 +603,12 @@ label {
   cursor: default;
 }
 
-.faq_box .ans .img_box {
+.morebtn .ans .img_box {
   margin-bottom: 12px;
   width: 140px;
 }
 
-.faq_box .ans .img_box img {
+.morebtn .ans .img_box img {
   width: 100%;
 }
 
@@ -650,9 +652,56 @@ label {
   color: #616161;
 }
 
-.menubody {
-  margin-bottom: 12px;
-}
+
+  .morebtn {
+    padding: 12px 16px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .morebtn.active::after {
+    transform: rotate(180deg);
+    top: 7%;
+    right: 13px;
+  }
+
+  .morebtn::after {
+    content: '';
+    position: absolute;
+    top: 64%;
+    right: 10px;
+    transform: translate(0,-50%);
+    width: 20px;
+    height: 20px;
+    background: url("image/icon/chevron-down_b.png")no-repeat;
+    background-size: 14px;
+    transition: all 0.3s ease-in;
+  }
+
+  .morecon {
+    display: none;
+  }
+
+  .morecon li {
+    padding: 14px 20px;
+    align-items: start;
+  }
+
+  .morecon li b {
+    min-width: 70px;
+  }
+
+  .morecon li p {
+    margin-bottom: 6px;
+  }
+
+  .morebtn.active .morecon {
+    display: block;
+  }
+
+  .menubody {
+    margin-bottom: 12px;
+  }
 
 .select-menu {
   position: relative;
@@ -677,7 +726,7 @@ label {
   transform: translate(0,-50%);
   width: 20px;
   height: 20px;
-  background: url(imge/icon/chevron-down_b.png)no-repeat;
+  background: url("image/icon/chevron-down_b.png")no-repeat;
   background-size: 14px;
   transition: all 0.3s ease-in;
 }
@@ -697,7 +746,6 @@ label {
 }
 
 .options {
-  display: none;
   position: absolute;
   top: 44px;
   width: 100%;
@@ -705,6 +753,7 @@ label {
   border-radius: 8px;
   background: #fff;
   z-index: 1;
+  display: none;
 }
 
 .options .option span {
@@ -760,7 +809,7 @@ textarea {
   transform: translate(0,-50%);
   width: 20px;
   height: 20px;
-  background: url("imge/icon/chevron-down_b.png")no-repeat;
+  background: url("image/icon/chevron-down_b.png")no-repeat;
   background-size: 14px;
   transition: all 0.3s ease-in;
 }
@@ -833,7 +882,7 @@ textarea {
   height: 30px;
 }
 
-.ask_con .faqpopbtn {
+.ask_con .qnapopbtn {
   cursor: pointer;
 }
 
@@ -893,16 +942,15 @@ textarea {
 
 
 .newsinn .search_wrap_top {
-  background: #F5F5F5;
   border-radius: 14px;
   border: 1px solid #d8d8d8;
-  overflow: hidden;
   margin-bottom: 30px;
+  background: #F5F5F5;
 }
 
 .newsinn .search_wrap_top>:nth-child(1) {
   padding: 10px;
-  background: #F5F5F5;
+  border-radius: 14px;
   display: flex;
   justify-content: space-between;
   max-width: 600px;
@@ -965,7 +1013,7 @@ textarea {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url("imge/icon/search_b.png")no-repeat;
+  background: url("image/icon/search_b.png")no-repeat;
   background-position: center;
   background-size: 30px;
   width: 30px;
@@ -982,15 +1030,21 @@ textarea {
 
 .newsconlist .con .title {
   margin-bottom: 10px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  overflow: hidden;
 }
 
 .newsconlist .con .desc {
   text-overflow: ellipsis;
-display: -webkit-box;
--webkit-line-clamp: 2; 
--webkit-box-orient: vertical;
-word-break: break-all;
-overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  overflow: hidden;
 }
 
 .numberlist ul {
@@ -1137,51 +1191,51 @@ overflow: hidden;
     padding: 24px 60px;
   }
 
-  .faq_box .ques, .ask_list .tit {
+  .morebtn .ques, .ask_list .tit {
     font-size: 1.2rem;
     line-height: 2rem;
   }
 
-  .faq_box .ques {
+  .morebtn .ques {
     padding: 30px 70px 30px 60px;
   }
 
-  .faq_box .ques::after, .ask_box .ques::after {
+  .morebtn .ques::after, .ask_box .ques::after {
     top: 55%;
     background-size: 20px;
   }
 
-  .faq_box .ques::before {
+  .morebtn .ques::before {
     width: 40px;
     height: 40px;
     background-size: 34px;
   }
-  .faq_box .ans {
+  .morebtn .ans {
     padding: 22px 135px 24px 60px;
   }
 
-  .faq_box .ans::after {
+  .morebtn .ans::after {
     width: 40px;
     height: 40px;
     background-size: 34px;
   }
 
-  .faq_box .ans .tt, .ask_list .ans .tt {
+  .morebtn .ans .tt, .ask_list .ans .tt {
     font-size: 1rem;
     line-height: 1.4rem;
   }
   
-  .faq_box .ans .ttlink, .ask_list .ans .ttlink {
+  .morebtn .ans .ttlink, .ask_list .ans .ttlink {
     font-size: 1rem;
     line-height: 1.4rem;
   }
 
-  .faq_box .ans .img_box {
+  .morebtn .ans .img_box {
     margin-bottom: 12px;
     width: 240px;
   }
   
-  .faq_box .ans .img_box img {
+  .morebtn .ans .img_box img {
     width: 100%;
   }
 
@@ -1216,7 +1270,7 @@ overflow: hidden;
     margin-bottom: 40px;
   }
 
-  .ask_con .faqpopbtn {
+  .ask_con .qnapopbtn {
     cursor: default;
     width: 50%;
     margin: 0 auto;

@@ -197,7 +197,7 @@ footer {
     top: 53%;
     right: 10px;
     transform: translate(-20%, -50%);
-    background: url("imge/icon/chevron-down_w.png") no-repeat;
+    background: url("image/icon/chevron-down_w.png") no-repeat;
     background-position: center center;
     background-size: contain;
     transition: all 0.3s ease-in;

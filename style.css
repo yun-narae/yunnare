@@ -247,7 +247,7 @@
     cursor: pointer; */
     width: 100%;
     height: 20px;
-    background: url("imge/icon/t_more.png")no-repeat;
+    background: url("image/icon/t_more.png")no-repeat;
     background-size: contain;
     background-position: center;
     cursor: default;
@@ -436,7 +436,7 @@
     z-index: 10;
     width: 100%;
     height: 30px;
-    background: url("imge/icon/btn_b.png") no-repeat;
+    background: url("image/icon/btn_b.png") no-repeat;
   }
 
   main .swiper-slide .txt_box div button:nth-child(2) {
@@ -458,7 +458,7 @@
     z-index: 10;
     width: 100%;
     height: 30px;
-    background: url("imge/icon/btn_w.png") no-repeat;
+    background: url("image/icon/btn_w.png") no-repeat;
   }
 
   .category .t-form .t-main {
@@ -655,19 +655,19 @@
     margin-bottom: 20px;
   }
 
-  .bestmorebtn {
+  .morebtn {
     padding: 12px 16px;
     position: relative;
     cursor: pointer;
   }
 
-  .bestmorebtn.active::after {
+  .morebtn.active::after {
     transform: rotate(180deg);
     top: 7%;
     right: 13px;
   }
 
-  .bestmorebtn::after {
+  .morebtn::after {
     content: '';
     position: absolute;
     top: 64%;
@@ -675,38 +675,30 @@
     transform: translate(0,-50%);
     width: 20px;
     height: 20px;
-    background: url("imge/icon/chevron-down_b.png")no-repeat;
+    background: url("image/icon/chevron-down_b.png")no-repeat;
     background-size: 14px;
     transition: all 0.3s ease-in;
   }
 
-  .bestmorecon {
+  .morecon {
     display: none;
   }
 
-  .bestmorecon li {
+  .morecon li {
     padding: 14px 20px;
     align-items: start;
   }
 
-  .bestmorecon li b {
+  .morecon li b {
     min-width: 70px;
   }
 
-  .bestmorecon li p {
+  .morecon li p {
     margin-bottom: 6px;
   }
 
-  .bestmorecon.active {
+  .morecon.active {
     display: block;
-  }
-
-  .bestmoreconshow {
-    display: block;
-  }
-
-  .bestmoreconhide {
-    display: none;
   }
 
   .bestKia .bestprice h3 {
@@ -938,7 +930,7 @@
     transform: translate(0,-50%);
     width: 20px;
     height: 20px;
-    background: url("imge/icon/chevron-down_b.png")no-repeat;
+    background: url("image/icon/chevron-down_b.png")no-repeat;
     background-size: 14px;
     transition: all 0.3s ease-in;
   }
@@ -1236,7 +1228,7 @@
       width: 30px;
       height: 30px;
       z-index: 10;
-      background: url("imge/icon/t-main_add.png");
+      background: url("image/icon/t-main_add.png");
       background-size: 30px;
       background-position: center center;
     }
@@ -1466,7 +1458,7 @@
       border: none;
     }
 
-    .bestmore_body .bestmorebtn {
+    .bestmore_body .morebtn {
       cursor: default;
       padding: 0px;
       margin-bottom: 14px;
@@ -1478,15 +1470,15 @@
       color: #757575;
     }
 
-    .bestmore_body .bestmorebtn::after {
+    .bestmore_body .morebtn::after {
       display: none;
     }
 
-    .bestmore_body .bestmorecon {
+    .bestmore_body .morebtn {
       display: block;
     }
 
-    .bestmore_body .bestmorecon li {
+    .bestmore_body .morebtn li {
       padding: 10px 0px;
       font-size: 1.2rem;
       line-height: 1.8rem;
@@ -1501,7 +1493,7 @@
       background: none;
     }
 
-    .bestKia .swiperconbody .moreContent_body::after {
+    .bestKia .swiperconbody .morebtn::after {
       display: none;
     }
 
@@ -1523,14 +1515,23 @@
       margin-bottom: 24px;
     }
 
-    .bestKia .swiperconbody .slide_content .wrapSub>:nth-child(1) p {
+    .bestKia .besttitle p {
       font-size: 1.2rem;
     }
-    
-    .bestKia .swiperconbody .moreContent_body .moreContent {
-      opacity: 1;
+
+    .morebtn {
+      pointer-events: none; /* mo에서만 클릭되도록 */
+    }
+
+    .morecon {
+      display: block;
       height: fit-content;
       transform: translateY(0px);
+    }
+
+    .morecon li {
+      padding: 14px 0px;
+      font-size: 1.2rem;
     }
 
     .bestKia .swiperconbody .wrapSub>:nth-child(3) p {
