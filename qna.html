@@ -65,25 +65,24 @@
                         <div class="inn grid">
                             <p class="tit">문의유형<span>*</span></p>
                             <div class="menubody">
-                                <div class="select-menu">
-                                    <div class="select-btn">
-                                        <span class="sBtn-text">문의 유형</span>
+                                <div class="selectbody">
+                                    <div class="select">
+                                        <div class="select-btn">
+                                            <span class="btn-tt">전체</span>
+                                        </div>
+    
+                                        <ul class="options">
+                                            <li class="option">
+                                                <span class="option-tt">전체</span>
+                                            </li>
+                                            <li class="option">
+                                                <span class="option-tt">제목</span>
+                                            </li>
+                                            <li class="option">
+                                                <span class="option-tt">내용</span>
+                                            </li>
+                                        </ul>
                                     </div>
-                            
-                                    <ul class="options">
-                                        <li class="option">
-                                            <span class="option-text">전체</span>
-                                        </li>
-                                        <li class="option">
-                                            <span class="option-text">차량 구매</span>
-                                        </li>
-                                        <li class="option">
-                                            <span class="option-text">차량 정비</span>
-                                        </li>
-                                        <li class="option">
-                                            <span class="option-text">기아 멤버스</span>
-                                        </li>
-                                    </ul>
                                 </div>
                                 <div class="desc">
                                     기아멤버스 관련 문의는 기아멤버스에서 바로 확인하실 수 있습니다.
@@ -190,7 +189,7 @@
         <div class="forminn">
             <div class="conlist">
                 <div class="ask_box">
-                    <div class="ques">
+                    <div class="ques" onclick="collapse(this);" >
                         <div class="topbox flex-between">
                             <p class="desc">차량 정비</p>
                             <p class="badge fi">답변완료</p>
@@ -212,7 +211,7 @@
                     </div>
                 </div>
                 <div class="ask_box">
-                    <div class="ques">
+                    <div class="ques" onclick="collapse(this);">
                         <div class="topbox flex-between">
                             <p class="desc">차량 구매</p>
                             <p class="badge">대기중</p>
@@ -228,7 +227,7 @@
                     </div>
                 </div>
                 <div class="ask_box">
-                    <div class="ques">
+                    <div class="ques" onclick="collapse(this);">
                         <div class="topbox flex-between">
                             <p class="desc">전체</p>
                             <p class="badge fi">답변완료</p>
@@ -258,29 +257,7 @@
 </body>
 
 <script>
-    // qna ask open
-    const ask_box = {
-      click: function(target) {
-        var $target = $(target);
-        $target.on('click', function() {
 
-          if ($(this).hasClass('active')) {
-            slideUp($target);
-          } else {
-            slideUp($target);
-            $(this).addClass('active').next().slideDown();
-          }
-
-          function slideUp($target) {
-            $target.removeClass('active').next().slideUp();
-          }
-
-        });
-      }
-    };
-    ask_box.click('.ask_box > .ques');
-
-    
     // qna select-menu
     const qnaoptionMenus = document.querySelector(".select-menu"),
         qnaselectBtn = qnaoptionMenus.querySelector(".select-btn"),
@@ -309,6 +286,9 @@
         qnapopbtn_close.addEventListener("click", function() {
         document.querySelector(".ask_finishform").style.display = "none";
         });
+
+
+
 
 </script>
 

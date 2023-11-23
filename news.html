@@ -229,6 +229,34 @@
 
 </body>
 
+<script>
+    // option select 중복가능 -> 여기로 안올리면 news페이지의 select 안먹힘.
+    const newsselectBoxElements = document.querySelectorAll(".select");
+
+    function toggleSelectBox(selectBox) {
+        selectBox.classList.toggle("active");
+    }
+
+    function selectOption(optionElement) {
+        const selectBox = optionElement.closest(".select");
+        const selectedElement = selectBox.querySelector(".btn-tt");
+        selectedElement.textContent = optionElement.textContent;
+    }
+
+    newsselectBoxElements.forEach(selectBoxElement => {
+        selectBoxElement.addEventListener("click", function (e) {
+            const targetElement = e.target;
+            const isOptionElement = targetElement.classList.contains("option-tt");
+
+            if (isOptionElement) {
+                selectOption(targetElement);
+            }
+
+            toggleSelectBox(selectBoxElement);
+        });
+    });
+</script>
+
 
 <script>
   includeHTML();

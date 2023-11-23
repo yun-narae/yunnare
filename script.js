@@ -1,3 +1,5 @@
+
+
 function includeHTML() {
     var z, i, elmnt, file, xhttp;
     /*loop through a collection of all HTML elements:*/
@@ -17,64 +19,21 @@ function includeHTML() {
             elmnt.removeAttribute("w3-include-html");
             includeHTML();
   
-            // 전기수는 여기에 왜 네비오븐을 넣지??
             //-------------------------------------
-            // fooer
-          // dropdown
-          const optionMenu = document.querySelector(".ffdropdown"),
-                selectBtn = optionMenu.querySelector(".select_btn"),
-                options = optionMenu.querySelectorAll(".foption"),
-                title = optionMenu.querySelector(".setitle");
-                selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
-                options.forEach(option => {
-                option.addEventListener("click", () => {
-                    let selectedOption = option.querySelector(".option_text").innerText;
-                    title.innerText = selectedOption;
-                    optionMenu.classList.remove("active");
-                })
+            // fooer dropdown
+            const optionMenu = document.querySelector(".ffdropdown"),
+                    selectBtn = optionMenu.querySelector(".select_btn"),
+                    options = optionMenu.querySelectorAll(".foption"),
+                    title = optionMenu.querySelector(".setitle");
+                    selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));
+                    options.forEach(option => {
+                    option.addEventListener("click", () => {
+                        let selectedOption = option.querySelector(".option_text").innerText;
+                        title.innerText = selectedOption;
+                        optionMenu.classList.remove("active");
+                    })
             });
 
-
-            // option select 중복가능
-            const selectBoxElements = document.querySelectorAll(".select");
-    
-            function toggleSelectBox(selectBox) {
-                selectBox.classList.toggle("active");
-            }
-
-            function selectOption(optionElement) {
-                const selectBox = optionElement.closest(".select");
-                const selectedElement = selectBox.querySelector(".btn-tt");
-                selectedElement.textContent = optionElement.textContent;
-            }
-
-            selectBoxElements.forEach(selectBoxElement => {
-                selectBoxElement.addEventListener("click", function (e) {
-                    const targetElement = e.target;
-                    const isOptionElement = targetElement.classList.contains("option-tt");
-
-                    if (isOptionElement) {
-                        selectOption(targetElement);
-                    }
-
-                    toggleSelectBox(selectBoxElement);
-                });
-            });
-
-            document.addEventListener("click", function (e) {
-                const targetElement = e.target;
-                const isSelect = targetElement.classList.contains("select") || targetElement.closest(".select");
-
-                if (isSelect) {
-                    return;
-                }
-
-                const allSelectBoxElements = document.querySelectorAll(".select");
-
-                allSelectBoxElements.forEach(boxElement => {
-                    boxElement.classList.remove("active");
-                });
-            }); 
 
             // search
               // search_open
@@ -124,52 +83,6 @@ function includeHTML() {
                   }
               });
             };
-
-            // // faq ques open
-            // // 위치 고정
-            // const faq_box = {
-            //     click: function(target) {
-            //     var $target = $(target);
-            //     $target.on('click', function() {
-        
-            //         if ($(this).hasClass('active')) {
-            //         slideUp($target);
-            //         } else {
-            //         slideUp($target);
-            //         $(this).addClass('active').next().slideDown();
-            //         }
-        
-            //         function slideUp($target) {
-            //         $target.removeClass('active').next().slideUp();
-            //         }
-        
-            //     });
-            //     }
-            // };
-            // faq_box.click('.faq_box > .ques');
-
-            // // qna ask open
-            // // 위치 고정
-            // const ask_box = {
-            //     click: function(target) {
-            //     var $target = $(target);
-            //     $target.on('click', function() {
-        
-            //         if ($(this).hasClass('active')) {
-            //         slideUp($target);
-            //         } else {
-            //         slideUp($target);
-            //         $(this).addClass('active').next().slideDown();
-            //         }
-        
-            //         function slideUp($target) {
-            //         $target.removeClass('active').next().slideUp();
-            //         }
-        
-            //     });
-            //     }
-            // };
-            // ask_box.click('.ask_box > .ques');
 
   
             // reveal
@@ -232,8 +145,34 @@ function includeHTML() {
                     pcnav.classList.remove('active');
                 }
             });
+
+
+            // All more open -> selectBoxElements위로 안올리면 morebtn 안먹힘
+            window.addEventListener("load", function () {
+
+                var moreopen = {
+                    click: function(target) {
+                    var $target = $(target);
+                    $target.on('click', function() {
+                
+                        if ($(this).hasClass('active')) {
+                        slideUp($target);
+                        } else {
+                        slideUp($target);
+                        $(this).addClass('active').next().slideDown();
+                        }
+                
+                        function slideUp($target) {
+                        $target.removeClass('active').next().slideUp();
+                        }
+                
+                    });
+                    }
+                };
+                moreopen.click('.morebtn');
+            })
   
-  
+
             // swiper-slid parallax
             const swiper01 = new Swiper(".mainContentSwiper", {
                 rewind: true,
@@ -252,6 +191,34 @@ function includeHTML() {
                 disableOnInteraction: false,
                 },    
             });
+
+
+            // option select 중복가능 -> 여기로 안올리면 news페이지의 select 안먹힘.
+                const selectBoxElements = document.querySelectorAll(".select");
+
+                function toggleSelectBox(selectBox) {
+                    selectBox.classList.toggle("active");
+                }
+
+                function selectOption(optionElement) {
+                    const selectBox = optionElement.closest(".select");
+                    const selectedElement = selectBox.querySelector(".btn-tt");
+                    selectedElement.textContent = optionElement.textContent;
+                }
+
+                selectBoxElements.forEach(selectBoxElement => {
+                    selectBoxElement.addEventListener("click", function (e) {
+                        const targetElement = e.target;
+                        const isOptionElement = targetElement.classList.contains("option-tt");
+
+                        if (isOptionElement) {
+                            selectOption(targetElement);
+                        }
+
+                        toggleSelectBox(selectBoxElement);
+                    });
+                });
+            
   
   
             // tab-container
@@ -451,90 +418,83 @@ function includeHTML() {
             subTabwrappe04.addEventListener("mousedown", dragStart04);
             subTabwrappe04.addEventListener("mousemove", dragging04);
             subTabwrappe04.addEventListener("mouseup", dragStop04);
-  
+
+
+            document.addEventListener("click", function (e) {
+                const targetElement = e.target;
+                const isSelect = targetElement.classList.contains("select") || targetElement.closest(".select");
+
+                if (isSelect) {
+                    return;
+                }
+
+                const allSelectBoxElements = document.querySelectorAll(".select");
+
+                allSelectBoxElements.forEach(boxElement => {
+                    boxElement.classList.remove("active");
+                });
+            });
+
 
             // 할부 계산기
-          const slider = document.getElementById("myRange");
-          const output = document.getElementById("demo");
-          const pst = document.getElementById("myRange1");
-          const value = document.getElementById("value");
-              output.innerHTML = slider.value;
-  
-              slider.oninput = function () {
-                  output.innerHTML = this.value;
-              }
-  
-              
-              value.textContent = pst.value;
-              pst.oninput = function () {
-                  value.textContent = this.value;
-              }
+            const slider = document.getElementById("myRange");
+            const output = document.getElementById("demo");
+            const pst = document.getElementById("myRange1");
+            const value = document.getElementById("value");
+                output.innerHTML = slider.value;
+    
+                slider.oninput = function () {
+                    output.innerHTML = this.value;
+                }
+    
+                
+                value.textContent = pst.value;
+                pst.oninput = function () {
+                    value.textContent = this.value;
+                }
   
               function btnPay() {
                   alert('서비스 준비중 입니다.');
               };
   
   
-          // event Swiper
-          const swiper03 = new Swiper(".eventthumbsSlider", {
-              rewind: true,
-              spaceBetween: 7,
-              slidesPerView: 4, // 사이즈별로 보여지는거 있는데..
-              parallax: true,
-              speed: 900,
-              freeMode: true,
-              watchSlidesProgress: true,
-              autoplay: {
-                  delay: 2500,
-                  disableOnInteraction: false,
-              },
-          });
-          const swiper04 = new Swiper(".eventSwiper", {
-              rewind: true,
-              spaceBetween: 7,
-              slidesPerView: 1,
-              breakpoints: {
-                  1366: {
-                  slidesPerView: 2,//1366px 이상일 때 3개
-                  }
-              },
-              parallax: true,
-              speed: 900,
-              thumbs: {
-                  swiper: swiper03,
-              },
-              pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-              },
-              autoplay: {
-                  delay: 2500,
-                  disableOnInteraction: false,
-              },
-          });
-
-
-          // All more open
-            var moreopen = {
-                click: function(target) {
-                var $target = $(target);
-                $target.on('click', function() {
-        
-                    if ($(this).hasClass('active')) {
-                    slideUp($target);
-                    } else {
-                    slideUp($target);
-                    $(this).addClass('active').next().slideDown();
+            // event Swiper
+            const swiper03 = new Swiper(".eventthumbsSlider", {
+                rewind: true,
+                spaceBetween: 7,
+                slidesPerView: 4, // 사이즈별로 보여지는거 있는데..
+                parallax: true,
+                speed: 900,
+                freeMode: true,
+                watchSlidesProgress: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+            });
+            const swiper04 = new Swiper(".eventSwiper", {
+                rewind: true,
+                spaceBetween: 7,
+                slidesPerView: 1,
+                breakpoints: {
+                    1366: {
+                    slidesPerView: 2,//1366px 이상일 때 3개
                     }
-        
-                    function slideUp($target) {
-                    $target.removeClass('active').next().slideUp();
-                    }
-        
-                });
-                }
-            };
-            moreopen.click('.morebtn');
+                },
+                parallax: true,
+                speed: 900,
+                thumbs: {
+                    swiper: swiper03,
+                },
+                pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                },
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+            });
 
 
             // newKia swiper-slid 1366px에서는 작동X
@@ -576,9 +536,6 @@ function includeHTML() {
             ww = $(window).width();
             initSwiper();
             });
-
-
-
             
 
           
@@ -592,10 +549,67 @@ function includeHTML() {
     }
   };
   
-  
-  
-  
-  
-  
-  
-  
+
+// 아코디언 시작 -> 가린부분 오픈하면 중복 막을 수 있음
+function collapse(element) {
+    var before = document.getElementsByClassName("active")[0] // 기존에 활성화된 버튼
+    // if (before && document.getElementsByClassName("active")[0] != element) { // 자신 이외에 이미 활성화된 버튼이 있으면
+    //   before.nextElementSibling.style.maxHeight = null; // 기존에 펼쳐진 내용 접고
+    //   before.classList.remove("active"); // 버튼 비활성화
+    // }
+    element.classList.toggle("active"); // 활성화 여부 toggle
+    
+    var content = element.nextElementSibling;
+    if (content.style.display != 0) { // 버튼 다음 요소가 펼쳐져 있으면
+        content.style.display = null; // 접기
+    } else {
+        content.style.display = "block"; // 접혀있는 경우 펼치기
+    }
+};
+
+
+
+// faq swiper opTab opConbody 
+window.addEventListener("load", function () {
+    const faqBtns = document.querySelectorAll('.faqTab > div');
+    const faqConts = document.querySelectorAll('.conninn > div');
+
+    faqBtns.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        faqBtns.forEach(otherBtn => {
+        otherBtn.classList.remove('active');
+        });
+        faqConts.forEach(othercont => {
+        othercont.classList.remove('active');
+        });
+        faqBtns[index].classList.add('active');
+        faqConts[index].classList.add('active');
+        });
+    });
+})
+
+
+// faq 마우스로 Draggable 
+// 참고 : https://codepen.io/rqsaiifh-the-flexboxer/pen/qBgXKrW
+window.addEventListener("load", function () {
+    const wrapper = document.querySelector(".drag");
+    let isDragStart = false,
+        prevPageX, prevScrollLeft;
+    const faqdragStart = (e) => {
+        isDragStart = true;
+        prevPageX = e.pageX;
+        prevScrollLeft = wrapper.scrollLeft;
+    };
+    const faqdragging = (e) => {
+        if (!isDragStart) return;
+        e.preventDefault();
+        let positionDiff = e.pageX - prevPageX;
+        wrapper.scrollLeft = prevScrollLeft - positionDiff;
+    };
+    const faqdragStop = () => {
+        isDragStart = false;
+    };
+    wrapper.addEventListener("mousedown", faqdragStart);
+    wrapper.addEventListener("mousemove", faqdragging);
+    wrapper.addEventListener("mouseup", faqdragStop);
+})
