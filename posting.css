@@ -319,6 +319,10 @@ input:hover {
   display: flex;
 }
 
+/* .label_box:hover label {
+  opacity: 0.1;
+} */
+
 .name {
   font-size: 0.8rem;
   font-weight: 500;
@@ -496,6 +500,14 @@ label {
   color: #121212;
 }
 
+.conninn > div {
+  display: none;
+}
+
+.conninn > div.active {
+  display: block;
+}
+
 .faqTab > div.active::before {
   width: 100%;
   transform: translate(0%, 50%) scaleX(1);
@@ -513,19 +525,13 @@ label {
   transform: translate(-25%, 50%) scaleX(0);
 }
 
-.conninn > div {
-  display: none;
-} 
-
-.conninn > div.active {
-  display: block;
-}
-
 .conlist .more {
-  margin-top: 20px;
+  padding-top: 24px;
+  max-width: 360px;
+  margin: 0 auto;
 }
 
-.morebtn .ques {
+.faq_box .ques {
   color: #3d3d3d;
   font-size: 0.8rem;
   font-weight: 700;
@@ -540,7 +546,7 @@ label {
   position: relative;
 }
 
-.morebtn .ques::after {
+.faq_box .ques::after {
   content: '';
   position: absolute;
   top: 64%;
@@ -553,7 +559,7 @@ label {
   transition: all 0.3s ease-in;
 }
 
-.morebtn .ques::before {
+.faq_box .ques::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -565,17 +571,17 @@ label {
   background-size: 24px;
 }
 
-.morebtn .ques:hover,.morebtn .ques.active {
+.faq_box .ques:hover,.faq_box .ques.active {
   color: #121212;
   border-bottom: 1px solid #757575;
 }
 
-.morebtn .ques.active::after {
+.faq_box .ques.active::after {
   transform: rotate(180deg);
   top: 22%;
 }
 
-.morebtn .ans {
+.faq_box .ans {
   background: #F5F5F5;
   padding: 60px 12px 24px 12px;
   border-bottom: 1px solid #d8d8d8;
@@ -583,7 +589,7 @@ label {
   position: relative;
 }
 
-.morebtn .ans::after {
+.faq_box .ans::after {
   content: '';
   position: absolute;
   top: 14px;
@@ -595,12 +601,12 @@ label {
   background-size: 24px;
 }
 
-.morebtn .ans .tt {
+.faq_box .ans .tt {
   font-size: 0.8rem;
   line-height: 1.2rem;
 }
 
-.morebtn .ans .ttlink {
+.faq_box .ans .ttlink {
   font-size: 0.8rem;
   line-height: 1.2rem;
   font-weight: 700;
@@ -608,12 +614,12 @@ label {
   cursor: default;
 }
 
-.morebtn .ans .img_box {
+.faq_box .ans .img_box {
   margin-bottom: 12px;
   width: 140px;
 }
 
-.morebtn .ans .img_box img {
+.faq_box .ans .img_box img {
   width: 100%;
 }
 
@@ -683,24 +689,24 @@ label {
     transition: all 0.3s ease-in;
   }
 
-  .morebox {
+  .ans {
     display: none;
   }
 
-  .morebox li {
+  .ans li {
     padding: 14px 20px;
     align-items: start;
   }
 
-  .morebox li b {
+  .ans li b {
     min-width: 70px;
   }
 
-  .morebox li p {
+  .ans li p {
     margin-bottom: 6px;
   }
 
-  .morebtn.active .morebox {
+  .morebtn.active .ans {
     display: block;
   }
 
@@ -712,18 +718,15 @@ label {
   position: relative;
 }
 
-.newsinn .select-btn {
-  border: 1px solid #dadbdc;
+.ask_con .select-btn,.newsinn .select-btn {
   border-radius: 8px;
   background: #fff;
   padding: 10px;
   display: block;
   cursor: pointer;
-} .newsinn .select-btn:hover {
-  border: 1px solid #757575;
 }
 
-.newsinn .select-btn::after {
+.ask_con .select-btn::after,.newsinn .select-btn::after {
   content: '';
   position: absolute;
   top: 64%;
@@ -734,40 +737,6 @@ label {
   background: url("image/icon/chevron-down_b.png")no-repeat;
   background-size: 14px;
   transition: all 0.3s ease-in;
-}
-
-.select-menu.active .options {
-  display: block;
-}
-
-.select-menu.active .newsinn .select-btn, .select-menu.active .options{
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.09);
-  border: 1px solid #757575;
-}
-
-.select-menu.active .select-btn::after {
-  transform: rotate(180deg);
-  top: 11%;
-}
-
-.options {
-  position: absolute;
-  top: 44px;
-  width: 100%;
-  border: 1px solid #dadbdc;
-  border-radius: 8px;
-  background: #fff;
-  z-index: 1;
-  display: none;
-}
-
-.options .option span {
-  color: #757575;
-  padding: 10px;
-  display: block;
-  cursor: pointer;
-} .options .option span:hover {
-  color: #121212;
 }
 
 textarea {
@@ -783,7 +752,7 @@ textarea {
   margin-bottom: 40px;
 }
 
-.ask_con .inn:first-child .select-btn {
+.ask_con .inn .selectbody {
   margin-bottom: 6px;
 }
 
@@ -945,7 +914,6 @@ textarea {
   cursor: pointer;
 }
 
-
 .newsinn .search_wrap_top {
   border-radius: 14px;
   border: 1px solid #d8d8d8;
@@ -960,32 +928,38 @@ textarea {
   justify-content: space-between;
   max-width: 600px;
   margin: 0 auto;
-}
-
-.newsinn  .selectbody {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   gap: 10px;
 }
 
-.newsinn  .select {
+.newsinn .search_label {
+  /* width: 70%; */
+  height: 38px;
+}
+
+.newsinn .selectbody {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%;
+}
+
+.ask_con .select, .newsinn .select {
   border: 1px solid #dadbdc;
-  width: 50%;
   cursor: pointer;
   border-radius: 8px;
   background: #fff;
   position: relative;
+  width: 100%;
 } .newsinn  .select:hover {
   border: 1px solid #757575;
 }
 
-.newsinn  .select.active {
+.ask_con .select.active, .newsinn .select.active {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.09);
   border: 1px solid #757575;
 }
 
-.newsinn  .select.active .options {
+.ask_con .select.active .options, .newsinn .select.active .options {
   display: block;
 } .newsinn  .select.active .select-btn::after {
   transform: rotate(180deg);
@@ -997,25 +971,11 @@ textarea {
   position: relative;
 }
 
-.newsinn  .select-btn::after {
-  content: '';
-  position: absolute;
-  top: 64%;
-  right: 10px;
-  transform: translate(0,-50%);
-  width: 20px;
-  height: 20px;
-  background: url("image/icon/chevron-down_b.png")no-repeat;
-  background-size: 14px;
-  transition: all 0.3s ease-in;
-}
-
 .newsinn .select-btn .btn-tt {
-  padding: 10px 20px;
   display: block;
 }
 
-.newsinn .options {
+.select .options, .newsinn .options {
   display: block;
   position: absolute;
   top: 20px;
@@ -1029,6 +989,13 @@ textarea {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.09);
   display: none;
   z-index: 10;
+}
+
+.select .options li, .newsinn .options li {
+  padding: 10px;
+  color: #757575;
+} .select .options li:hover, .newsinn .options li:hover {
+  color: #121212;
 }
 
 .newsinn label {
@@ -1213,7 +1180,7 @@ textarea {
 
   .label_box label {
     background-size: 30px;
-    padding-left: 34px;
+    padding-left: 40px;
     height: 30px;
   }
 
@@ -1239,51 +1206,51 @@ textarea {
     padding: 24px 60px;
   }
 
-  .morebtn .ques, .ask_list .tit {
+  .faq_box .ques, .ask_list .tit {
     font-size: 1.2rem;
     line-height: 2rem;
   }
 
-  .morebtn .ques {
+  .faq_box .ques {
     padding: 30px 70px 30px 60px;
   }
 
-  .morebtn .ques::after, .ask_box .ques::after {
+  .faq_box .ques::after, .ask_box .ques::after {
     top: 55%;
     background-size: 20px;
   }
 
-  .morebtn .ques::before {
+  .faq_box .ques::before {
     width: 40px;
     height: 40px;
     background-size: 34px;
   }
-  .morebtn .ans {
+  .faq_box .ans {
     padding: 22px 135px 24px 60px;
   }
 
-  .morebtn .ans::after {
+  .faq_box .ans::after {
     width: 40px;
     height: 40px;
     background-size: 34px;
   }
 
-  .morebtn .ans .tt, .ask_list .ans .tt {
+  .faq_box .ans .tt, .ask_list .ans .tt {
     font-size: 1rem;
     line-height: 1.4rem;
   }
   
-  .morebtn .ans .ttlink, .ask_list .ans .ttlink {
+  .faq_box .ans .ttlink, .ask_list .ans .ttlink {
     font-size: 1rem;
     line-height: 1.4rem;
   }
 
-  .morebtn .ans .img_box {
+  .faq_box .ans .img_box {
     margin-bottom: 12px;
     width: 240px;
   }
   
-  .morebtn .ans .img_box img {
+  .faq_box .ans .img_box img {
     width: 100%;
   }
 
@@ -1297,10 +1264,6 @@ textarea {
     border-right: 1px solid #dadbdc;
     height: 90%;
     padding-right: 40px;
-  }
-
-  .ask_con .inn:first-child .select-btn {
-    margin-bottom: 10px;
   }
 
   .ask_form .inn.message {

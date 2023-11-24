@@ -145,32 +145,6 @@ function includeHTML() {
                     pcnav.classList.remove('active');
                 }
             });
-
-
-            // All more open -> selectBoxElements위로 안올리면 morebtn 안먹힘
-            window.addEventListener("load", function () {
-
-                var moreopen = {
-                    click: function(target) {
-                    var $target = $(target);
-                    $target.on('click', function() {
-                
-                        if ($(this).hasClass('active')) {
-                        slideUp($target);
-                        } else {
-                        slideUp($target);
-                        $(this).addClass('active').next().slideDown();
-                        }
-                
-                        function slideUp($target) {
-                        $target.removeClass('active').next().slideUp();
-                        }
-                
-                    });
-                    }
-                };
-                moreopen.click('.morebtn');
-            })
   
 
             // swiper-slid parallax
@@ -219,7 +193,6 @@ function includeHTML() {
                     });
                 });
             
-  
   
             // tab-container
               const tabBtns = document.querySelectorAll('.mainTab > li');

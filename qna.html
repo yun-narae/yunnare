@@ -258,21 +258,30 @@
 
 <script>
 
-    // qna select-menu
-    const qnaoptionMenus = document.querySelector(".select-menu"),
-        qnaselectBtn = qnaoptionMenus.querySelector(".select-btn"),
-        qnaoptions = qnaoptionMenus.querySelectorAll(".option"),
-        qnasBtn_text = qnaoptionMenus.querySelector(".sBtn-text");
+    // option select 중복가능 -> 여기로 안올리면 news페이지의 select 안먹힘.
+    const newsselectBoxElements = document.querySelectorAll(".select");
 
-        qnaselectBtn.addEventListener("click", () => qnaoptionMenus.classList.toggle("active"));
+    function toggleSelectBox(selectBox) {
+        selectBox.classList.toggle("active");
+    }
 
-        qnaoptions.forEach(qnaoption =>{
-            qnaoption.addEventListener("click",()=>{
-            let selectedOption = qnaoption.querySelector(".option-text").innerText;
-            qnasBtn_text.innerText = selectedOption;
+    function selectOption(optionElement) {
+        const selectBox = optionElement.closest(".select");
+        const selectedElement = selectBox.querySelector(".btn-tt");
+        selectedElement.textContent = optionElement.textContent;
+    }
 
-            qnaoptionMenus.classList.remove("active");
-        })
+    newsselectBoxElements.forEach(selectBoxElement => {
+        selectBoxElement.addEventListener("click", function (e) {
+            const targetElement = e.target;
+            const isOptionElement = targetElement.classList.contains("option-tt");
+
+            if (isOptionElement) {
+                selectOption(targetElement);
+            }
+
+            toggleSelectBox(selectBoxElement);
+        });
     });
 
     // qna popup
